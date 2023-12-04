@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ #banner {
+  background-color: white; /* Light grey color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+}
+
+#banner-logo {
+  font-size: 30px; /* Example size */
+  color: rgb(235, 185, 5)
+}
+
+#banner-logo a {
+  text-decoration: none;
+  color: inherit; /* Ensure the color matches your design */
+}
+
+
+#banner-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px; /* Spacing between icons */
+}
+
+
+#banner-title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 35px; /* Adjust size as needed */
+  color: rgb(235, 185, 5);
+  font-family: cursive;
+  font-weight: bold;
+}
+
+#banner-icons a, #cart-icon, #user-icon {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(235, 185, 5); /* or specific color */
+}
+
+.fa-user-circle, .fa-shopping-bag, .fa-users-cog {
+  font-size: 28px; /* Adjust size as needed */
+}
+
+#cart-icon-container {
+  position: relative;
+}
+
+.cart-icon {
+  position: relative; /* Needed for absolute positioning of the badge */
+}
+
+.cart-quantity-badge {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Align items horizontally in the center */
+
+  position: absolute;
+  top: 17px; /* Adjust as necessary */
+  right: -5px; /* Adjust as necessary */
+  background-color: rgb(233, 45, 45);
+  color: white;
+  border-radius: 50%; /* Circular badge */
+  font-size: 10px; /* Smaller font size for the badge */
+  line-height: 1; /* Normal line height for centering */
+  width: 17px; /* Ensures the badge has a minimum size */
+  height: 17px; /* Ensures the badge has a minimum size */
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.cart-dropdown {
+  display: none; /* Initially hidden */
+  position: absolute;
+  right: 0; /* Align the dropdown to the right edge of the cart icon container */
+  top: 100%; /* Position the dropdown right below the cart icon */
+  z-index: 100; /* Make sure the dropdown appears above other content */
+  width: 400px; /* Set a fixed width or as required */
+  background-color: #fff; /* Set the background color as needed */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds a shadow for better visibility */
+  /* Add any additional styling you require for the dropdown */
+}
+
+// #cart-dropdown {
+//   width: 400px; /* Width of the side panel */
+//   background-color: white;
+//   top: 20%;
+// }
+
+.bottom {
+  display: flex;
+
+}
+
+#main {
+  flex-grow: 1;
+}
+
+#search-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.search-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+

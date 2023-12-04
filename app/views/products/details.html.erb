@@ -1,0 +1,19 @@
+
+
+<div class="product-show-container">
+  <div class="product-show-image">
+    <%= image_tag(@product.image) %>
+  </div>
+
+  <div class="product-show-details">
+    <div class="product-header">
+      <h2 class="product-show-name"><%= @product.name %></h2>
+      <p class="product-show-price"><%= number_to_currency @product.price %></p>
+    </div>
+    <p class="product-show-description"><%= @product.description %></p>
+  </div>
+  <div class="product-show-actions">
+    <%= button_to 'Add to Cart', lineitems_path(product_id: @product.id), method: :post, class: 'add-to-cart-button' %>
+    <%= link_to 'Back to Shopper', shopper_path, class: 'back-to-shopper-button' %>
+  </div>
+</div>

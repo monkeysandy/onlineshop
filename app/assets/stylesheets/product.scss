@@ -1,0 +1,215 @@
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; // Center the cards within the container
+  padding: 30px; // Padding around the container
+  margin: 0 auto; // Auto margins for horizontal centering
+  // max-width: 1200px; // Maximum width of the container
+
+  .product-card {
+    flex: 0 0 300px;
+    height: 400px;
+    width: 300px;
+    margin: 10px; // Margin around each card
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    border-radius: 10px; // Rounded corners
+    cursor: pointer;
+      
+
+      .product-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+  
+      .product-info {
+        padding: 15px;
+      }
+  
+      .product-name{
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .product-price {
+        font-size: 18px;
+        margin: 0;
+      }
+
+
+
+    }
+
+    .new-product-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #ccc; // Dashed border for the empty card
+        background-color: #f9f9f9;
+        cursor: pointer;
+        height: 400px;
+        width: 300px;
+        text-decoration: none;
+        /* Ensure the rest of the sizing matches your existing .product-card */
+      }
+
+      
+      
+      .add-new-content span {
+        font-size: 36px; // Large plus sign
+        color: #ccc;
+        
+      }
+      
+      /* If using an icon, you may need additional styling here */
+      
+
+      
+  }
+
+.product-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the text color from parent elements */
+}
+
+
+.product-show-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+  }
+  
+  .product-show-image img {
+    // width: 50%;
+    // height: auto;
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    border-radius: 10px;
+  }
+  
+  .product-show-details {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .product-show-name {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .product-show-price {
+    font-size: 20px;
+    color: green;
+    margin: 0;
+  }
+  
+  .product-show-description {
+    font-size: 16px;
+  }
+  
+  .product-show-actions a, .product-show-actions button {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .add-to-cart-button, .back-to-shopper-button {
+    display: flex;
+    margin: 10px;
+    padding: 6px 20px;
+    border: none;
+    background-color: #ffcc00;
+    color: white;
+    text-align: center;
+    text-decoration: none; /* For the back button link */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .back-to-shopper-button {
+    background-color: #6c757d; /* Different color for the back button */
+    font-size: 15px;
+  }
+
+
+
+  .product-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form-errors {
+    color: red;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Makes it a block-level element */
+    width: 100%; /* Full width */
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  @media (max-width: 1024px) {
+    .product-card {
+      width: calc(33% - 20px); // Adjust for medium-sized screens
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-card {
+      width: calc(50% - 20px); // Adjust for smaller screens
+    }
+  }
+  

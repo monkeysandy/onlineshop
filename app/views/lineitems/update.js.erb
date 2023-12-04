@@ -1,0 +1,11 @@
+// app/views/lineitems/update.js.erb
+var itemRow = document.getElementById("lineitem_<%= @lineitem.id %>");
+if (itemRow) {
+  itemRow.querySelector(".quantity-display").textContent = '<%= @lineitem.quantity %>';
+}
+
+var badge = document.querySelector('.cart-quantity-badge');
+if (badge) {
+  badge.textContent = '<%= @cart.total_quantity %>';
+}
+document.getElementById("<%= dom_id(@cart)").innerHTML = '<%= j(render @cart) %>'; %>

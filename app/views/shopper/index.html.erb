@@ -1,0 +1,17 @@
+<%# <h1> Shopper </h1> %>
+
+<div class="products-container">
+    <% @allproducts.each do |product| %>
+        <div class="product-card">
+            <div class="product-image" onclick="location.href='<%= product_details_path(product) %>'" style="cursor: pointer;">
+            <%= image_tag(product.image) %>
+            </div>
+            <div class="product-info" onclick="location.href='<%= product_details_path(product) %>'" style="cursor: pointer;">
+                <p class="product-name"><%= product.name %></p>
+                <p class="product-price"><%= number_to_currency product.price %></p>
+            </div>
+            
+            <%= button_to('Add to Cart', lineitems_path(product_id: product.id), :class => 'add-to-cart-btn', remote: true) %>
+        </div>
+    <% end %>
+</div>

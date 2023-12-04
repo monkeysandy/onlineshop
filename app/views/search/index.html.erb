@@ -1,0 +1,20 @@
+<%# <h1>Search/index</h1> %>
+<% if @results.empty? %>
+    <p>No results found</p>
+<% else %>
+    <div class="products-container">
+        <% @results.each do |product| %>
+            <div class="product-card">
+                <div class="product-image">
+                <%= image_tag(product.image) %>
+                </div>
+                <div class="product-info">
+                <p class="product-name"><%= product.name %></p>
+                <p class="product-price"><%= number_to_currency product.price %></p>
+                </div>
+                
+                <%= button_to('Add to Cart', lineitems_path(product_id: product.id), :class => 'add-to-cart-btn', remote: true) %>
+            </div>
+        <% end %>
+    </div>
+<% end %>

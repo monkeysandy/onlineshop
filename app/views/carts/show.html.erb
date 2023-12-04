@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h3>Items in your cart</h3>
+
+<table>
+  <% @cart.lineitems.each do |item| %>
+    <tr>
+      <td><%= item.quantity %></td>
+      <td><%= item.product.name %></td>
+      <td><%= number_to_currency item.product.price %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="2">Total</td>
+    <td><%= number_to_currency @cart.total_price %></td>
+</table>
+
+<div>
+  <p> <%= link_to "Home", shopper_path %> </p>
+
+  <%= button_to "Empty this cart", @cart, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

@@ -1,0 +1,6 @@
+// app/views/lineitems/destroy.js.erb
+var itemRow = document.getElementById("lineitem_<%= @lineitem.id %>");
+itemRow.remove();
+var badge = document.querySelector('.cart-quantity-badge');
+badge.textContent = '<%= @cart.total_quantity %>';
+document.getElementById('cart-dropdown').innerHTML = "<%= escape_javascript(render(@cart)) %>";

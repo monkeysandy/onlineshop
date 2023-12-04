@@ -1,0 +1,17 @@
+
+<p> Hi, Admin </p>
+<%= link_to 'Logout', logout_path, class: "logout-button" %>
+<p> We have <%= @products.count %> products in our database. </p>
+
+<div class="products-container">
+  <% @products.each do |product| %>
+    <%= render product %>
+  <% end %>
+
+  <%= link_to new_product_path, class: "product-card new-product-card" do %>
+  <div class="add-new-content">
+    <span>+</span> <!-- You can also use an icon here -->
+  </div>
+  <% end %>
+</div>
+

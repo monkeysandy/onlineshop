@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="product-show-container">
+  <div class="product-show-image">
+    <%= image_tag(@product.image) %>
+  </div>
+
+  <div class="product-show-details">
+    <div class="product-header">
+      <h2 class="product-show-name"><%= @product.name %></h2>
+      <p class="product-show-price"><%= number_to_currency @product.price %></p>
+    </div>
+    <p class="product-show-description"><%= @product.description %></p>
+    
+    <div class="product-show-actions">
+      <%= link_to "Edit this product", edit_product_path(@product) %>
+      <%= link_to "Back to products", products_path %>
+      <%= button_to "Destroy this product", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>

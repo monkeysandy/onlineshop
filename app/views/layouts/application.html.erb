@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Store</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <div id="banner-logo">
+      <% if admin? %>
+        <%= link_to products_path do %>
+          <i class="fas fa-tablets"></i>
+        <% end %>
+      <% else %>
+        <%= link_to shopper_url do %>
+          <i class="fas fa-tablets"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="banner-title">
+      <%= "SHOOPY" %>
+    </div>
+    <div id="banner-icons">
+      <div id="search-icon">
+        <%= form_with(url: search_path, method: :get, local: true) do |form| %>
+          <%= form.text_field :query, placeholder: "Search products...", class: "search-input" %>
+          <%= form.submit "Search", class: "search-button visually-hidden" %>
+        <% end %>
+      </div>
+      <div id="user-icon">
+        <% if current_user %>
+          <% if admin? %>
+            <%= link_to admin_orders_path do %>
+              <i class="fas fa-users-cog"></i>
+            <% end %>
+          <% else %>
+            <%= link_to user_profile_path(current_user) do %>
+              <i class="fas fa-user-circle"></i>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to login_path do %>
+            <i class="far fa-user-circle"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div id="cart-icon-container">
+        <div id="cart-icon" class="cart-icon">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-quantity-badge"><%= @cart.total_quantity %></span>
+        </div>
+        <div id="cart-dropdown" class="cart-dropdown">
+          <%= render(@cart) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>

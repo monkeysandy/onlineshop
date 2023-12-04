@@ -1,0 +1,31 @@
+<!-- app/views/users/profile.html.erb -->
+
+<h1>User Profile</h1>
+
+<!-- Display user information -->
+<p>Username: <%= @user.userid %></p>
+<!-- Add more user details as needed -->
+
+<h2>Recent Orders</h2>
+
+<% if @recent_orders.any? %>
+  <ul>
+    <% @recent_orders.each do |order| %>
+      <li>
+        Order ID: <%= order.id %>, Date: <%= order.created_at.to_date %>
+        <ul>
+          <% order.lineitems.each do |item| %>
+            <li>
+              Product: <%= item.product.name %>, Quantity: <%= item.quantity %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No recent orders found.</p>
+<% end %>
+
+<%= link_to 'Logout', logout_path, class: "logout-button" %>
+<%= link_to 'Back to Home', shopper_url %>
